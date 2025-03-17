@@ -6,7 +6,7 @@ import { getBody, getMouseBall, createLightFormers } from './getBodies-2.js'
 
 import { EffectComposer, RenderPass, EffectPass, BloomEffect, ToneMappingEffect, FXAAEffect } from 'postprocessing'
 
-// import LoadingIco from './components/LoadingIco.vue'
+import LoadingIco from './components/LoadingIco.vue'
 import PageWrap from './components/PageWrap.vue'
 import Header from './components/Header.vue'
 import FooterInfo from './components/FooterInfo.vue'
@@ -40,18 +40,6 @@ const handleResize = () => {
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 }
-
-// Loading Manager
-const loading = ref(true)
-const loadingManager = new THREE.LoadingManager(
-    () => {
-        loading.value = false
-    },
-    (file, loaded, total) => {
-        const progress = loaded / total
-        console.log(`Loading: ${progress * 100}%`)
-    }
-)
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ powerPreference: 'high-performance', antialias: false, alpha: false })
@@ -199,25 +187,14 @@ onBeforeUnmount(() => {
 <template>
     <PageWrap>
         <Header />
-        <!-- <div v-if="loading" class="z-10 h-dvh inset-0 flex items-center justify-center">
-            <LoadingIco />
-        </div> -->
         <div @click="click" class="outline-none w-full h-dvh" ref="webgl"></div>
 
         <FooterInfo>
             <template v-slot:title></template>
-            <template v-slot:first>
-                <a
-                    href="https://www.youtube.com/watch?v=xECyFOsVZ0E&list=WL&index=4&t=351s"
-                    target="_blank"
-                    class="underline-offset-2 font-medium"
-                >
-                    @Irradiance Earth and planes - tutorial</a
-                >
-            </template>
-            <template v-slot:second> </template>
+            <template v-slot:first> </template>
+            <template v-slot:second>Balls & Rapier physics </template>
             <template v-slot:github>
-                <a href="https://github.com/pccathome/fly-around-the-world" target="_blank" class="underline-offset-2"
+                <a href="https://github.com/pccathome/Balls-Rapier-physics" target="_blank" class="underline-offset-2"
                     >GitHub</a
                 >
             </template>
