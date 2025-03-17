@@ -1,0 +1,25 @@
+{
+    "name": "balls-rapier-physics",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.0.14",
+        "postprocessing": "^6.37.1",
+        "tailwindcss": "^4.0.14",
+        "three": "^0.174.0",
+        "vue": "^3.5.13"
+    },
+    "devDependencies": {
+        "@dimforge/rapier3d": "^0.15.0",
+        "@vitejs/plugin-vue": "^5.2.1",
+        "vite": "^6.2.0",
+        "vite-plugin-top-level-await": "^1.5.0",
+        "vite-plugin-wasm": "^3.4.1"
+    }
+}
